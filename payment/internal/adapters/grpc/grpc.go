@@ -11,7 +11,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func (a Adapter) Create(ctx context.Context, request *payment.CreatePaymentRequest) (*payment.CreatePaymentResponse, error) {
+func (a Adapter)Create (ctx context.Context, request *payment.CreatePaymentRequest ) (*payment.CreatePaymentResponse , error ) {
 	log.WithContext(ctx).Info("Creating payment...")
 
 	newPayment := domain.NewPayment(request.UserId, request.OrderId, request.TotalPrice)
